@@ -65,5 +65,6 @@ public class RecViewCustomerAdaptor extends RecyclerView.Adapter <RecViewCustome
 
     public void setCustomers(ArrayList<CustomerModel> customers) {
         this.customers = customers;
+        notifyDataSetChanged();
     }
 }

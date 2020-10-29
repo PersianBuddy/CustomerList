@@ -1,6 +1,7 @@
 package com.example.customerlist;
 
 public class CustomerModel {
+    private  int id;
     private String name;
     private  int age;
     private  String imageUrl = "";
@@ -38,5 +39,13 @@ public class CustomerModel {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

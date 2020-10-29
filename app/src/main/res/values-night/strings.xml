@@ -1,4 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Customer List</string>
     <string name="fab_content_desc">Adding a new customer</string>
 </resources>

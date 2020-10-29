@@ -3,7 +3,12 @@ package com.example.customerlist;
 public class CustomerModel {
     private String name;
     private  int age;
-    private  String imageUrl;
+    private  String imageUrl = "";
+
+    public CustomerModel(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public CustomerModel(String name, int age, String imageUrl) {
         this.name = name;

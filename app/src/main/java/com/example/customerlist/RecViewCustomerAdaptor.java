@@ -35,7 +35,10 @@ public class RecViewCustomerAdaptor extends RecyclerView.Adapter <RecViewCustome
         //TODO: find a way so u can translate "Name" and "age" strings in bellow statements
         holder.txtCustomerName.setText("Name: " + customers.get(position).getName());
         holder.txtCustomerAge.setText("Age " +Integer.toString(customers.get(position).getAge()));
-            //TODO: Show avatar Image
+        if (!customers.get(position).getImageUrl().equals("")){
+            new DownloadImageTask(holder.imgCustomerAvatar).execute(customers.get(position).getImageUrl());
+        }
+
 
         holder.clCustomerItem.setOnClickListener(new View.OnClickListener() {
             @Override

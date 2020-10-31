@@ -1,6 +1,7 @@
 package com.example.customerlist;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,8 +40,9 @@ public class RecViewCustomerAdaptor extends RecyclerView.Adapter <RecViewCustome
         holder.clCustomerItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, customers.get(position).getName() + " Clicked", Toast.LENGTH_SHORT).show();
-                //TODO: Add onclick option for each customer item
+                Intent intent = new Intent(context, EditCustomer.class);
+                intent.putExtra("Customer_id", customers.get(position).getId());
+                context.startActivity(intent);
             }
         });
     }

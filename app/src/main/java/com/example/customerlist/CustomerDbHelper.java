@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.security.cert.TrustAnchor;
 import java.util.ArrayList;
 
 public class CustomerDbHelper extends SQLiteOpenHelper {
@@ -76,5 +77,37 @@ public class CustomerDbHelper extends SQLiteOpenHelper {
 
         db.close();
         return true;
+    }
+
+    public CustomerModel getCustomer(int customer_id){
+        CustomerModel customer;
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM " + DbCustomerContract.TABLE_NAME +
+                " WHERE " + DbCustomerContract.COLUMN_CUSTOMER_ID +
+                "="+ customer_id + ";";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
+            String name = cursor.getString(1);
+            int age = cursor.getInt(2);
+            String imageUrl = cursor.getString(3);
+            customer = new CustomerModel(name, age, imageUrl);
+            return customer;
+        }
+
+        return null;
+    }
+
+    public boolean editCustomer(int customer_id, String newName, int newAge, String newImageUrl){
+        CustomerModel customer;
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(DbCustomerContract.COLUMN_CUSTOMER_NAME, newName);
+        cv.put(DbCustomerContract.COLUMN_CUSTOMER_AGE, newAge);
+        cv.put(DbCustomerContract.COLUMN_CUSTOMER_IMAGE_URL, newImageUrl);
+        int rowUpdated = db.update(DbCustomerContract.TABLE_NAME,cv, DbCustomerContract.COLUMN_CUSTOMER_ID+ "="+ customer_id,null);
+        if (rowUpdated ==1){
+            return true;
+        }
+        return false;
     }
 }

@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_to_home" />
 
     <EditText
         android:id="@+id/edt_customer_age"
@@ -38,11 +38,11 @@
         android:ems="10"
         android:hint="@string/enter_profile_image_url"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/edt_customer_age"
+        android:visibility="gone"
 
+        app:layout_constraintEnd_toEndOf="@+id/edt_customer_age"
         app:layout_constraintStart_toStartOf="@+id/edt_customer_age"
-        app:layout_constraintTop_toBottomOf="@+id/sw_add_image"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/sw_add_image" />
 
     <Button
         android:id="@+id/btn_edit_customer"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/edit_customer"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.89"
-        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_customer_image_url" />
 
@@ -69,10 +69,25 @@
         android:id="@+id/btn_back_to_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_edit_customer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_delete_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/delete"
+        android:textColor="#F44336"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintStart_toStartOf="@+id/sw_add_image"
-        app:layout_constraintTop_toTopOf="@+id/btn_edit_customer" />
+        app:layout_constraintTop_toBottomOf="@+id/sw_add_image"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

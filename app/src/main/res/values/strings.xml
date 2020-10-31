@@ -10,4 +10,9 @@
     <string name="add_customer">Add Customer</string>
     <string name="edit_customer">Edit Customer</string>
     <string name="back">Back</string>
+    <string name="customer_delete_dialog">Are you sure to delete this customer?</string>
+    <string name="delete_customer">Delete Customer</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="yes">Yes</string>
 </resources>

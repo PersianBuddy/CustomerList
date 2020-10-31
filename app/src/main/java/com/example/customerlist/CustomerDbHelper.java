@@ -110,4 +110,13 @@ public class CustomerDbHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
+    public boolean deleteCustomer(int customer_id){
+        SQLiteDatabase db = getWritableDatabase();
+        int deletedRow = db.delete(DbCustomerContract.TABLE_NAME, DbCustomerContract.COLUMN_CUSTOMER_ID + "=" + customer_id, null);
+        if (deletedRow >0){
+            return  true;
+        }
+        return false;
+    }
 }

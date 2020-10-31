@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -42,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
         fbAddCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setDummyData();
-                customers = dbHelper.getAll();
-                adaptor.setCustomers(customers);
-                Toast.makeText(MainActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, AddCustomer.class);
+                startActivity(intent);
             }
         });
 

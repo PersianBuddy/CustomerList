@@ -3,4 +3,9 @@
     <string name="fab_content_desc">Adding a new customer</string>
     <string name="customer_item_name">Name:</string>
     <string name="customer_item_age">Age:</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="add_image">Add Image</string>
+    <string name="enter_profile_image_url">Enter Profile Image Url</string>
+    <string name="add_customer">Add Customer</string>
 </resources>
